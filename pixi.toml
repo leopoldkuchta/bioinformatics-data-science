@@ -19,8 +19,8 @@ install.packages(c(),
     lib='./.pixi/R_libs',
     repos=c(
         CRAN = 'https://cloud.r-project.org',
-        bioc = BiocManager::repositories()
-        r-universe = 'https://r-universe.dev/packages'
+        bioc = BiocManager::repositories(),
+        # add r-universe repos as needed https://r-universe.dev/packages
     )
 )\"
 """
