@@ -1,0 +1,32 @@
+[workspace]
+authors = ["leopoldkuchta"]
+channels = ["conda-forge" "bioconda"]
+name = "Bioinformatcs_datascience_project"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[dependencies]
+r-base = ">=4.5.3,<4.6"
+r-biocmanager = ">=1.30.27,<2"
+
+[tasks]
+setup-r-packages = """
+Rscript -e \"
+dir.create('./.pixi/R_libs', showWarnings=FALSE);
+install.packages(c(),
+    lib='./.pixi/R_libs',
+    repos=c(
+        bimsb = 'https://bimsbbioinfo.r-universe.dev',
+        bnprks = 'https://bnprks.r-universe.dev',
+        artur = 'https://artur-man.r-universe.dev',
+        CRAN = 'https://cloud.r-project.org',
+        bioc = BiocManager::repositories()
+    )
+)\"
+"""
+# Run this task once when first setting up the environment
+# installs R packages
+# creates R user libs inside .pixi, ensuring that we know what packages are being used.
+
+[activation]
+env = { R_LIBS_USER = "./.pixi/R_libs" } # points R user libs to our custom location
