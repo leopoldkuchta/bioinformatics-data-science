@@ -1,7 +1,7 @@
 [workspace]
 authors = ["leopoldkuchta"]
-channels = ["conda-forge" "bioconda"]
-name = "Bioinformatcs_datascience_project"
+channels = ["conda-forge", "bioconda"]
+name = "bioinformatcs_datascience_project"
 platforms = ["linux-64"]
 version = "0.1.0"
 
@@ -24,9 +24,11 @@ install.packages(c(),
     )
 )\"
 """
-# Run this task once when first setting up the environment
-# installs R packages
-# creates R user libs inside .pixi, ensuring that we know what packages are being used.
+# installs R packages defined in c('xyz','xyz') - only add packages here that you cannot
+# find in the conda-forge and bioconda ecosystems (use as a last resort).
+# Run this task only once, when first setting up the environment
+# Creates R user libs inside .pixi, ensuring isolation. Be warned that these
+# packages are not added to the pixi lock file
 
 [activation]
 env = { R_LIBS_USER = "./.pixi/R_libs" } # points R user libs to our custom location
