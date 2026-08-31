@@ -14,4 +14,5 @@ What I consider to be the best currently available software stack for bioinforma
     - start using `positron .` in working pixi directory
     - in settings enable R pixi environment detection
     - in settings disable `use bundled ipykernel"
+    - works with system installation too! (flake based positron install not necessary)
 5. Enable direnv (if applicable)
