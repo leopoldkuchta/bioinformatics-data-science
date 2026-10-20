@@ -1,5 +1,5 @@
 {
-  description = "Bioinformatics-Datascience env";
+  description = "pixi-positron env";
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -8,12 +8,9 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { 
-          inherit system; 
-          config.allowUnfree = true;
-        };
+        pkgs = import nixpkgs { inherit system; config.allowUnfree=true; };
         fhs = pkgs.buildFHSEnv {
-          name = "pixi-positron-env";
+          name = "pixi-positron";
 
           targetPkgs = _: [ 
             pkgs.pixi 

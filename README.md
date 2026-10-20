@@ -9,6 +9,13 @@ What I consider to be the best currently available software stack for bioinforma
 2. Pixi:
     - use `pixi install` to install all the dependencies
     - use `pixi run setup-r-packages` to install R specific dependencies unavailable on conda
+    - make sure to run `pixi shell`, otherwise positron will not be able to see the shell
 3. Positron:
+    - start using `positron .` in working pixi directory
     - in settings enable R pixi environment detection
     - in settings disable `use bundled ipykernel"
+<<<<<<< HEAD
+=======
+    - works with system installation too! (flake based positron install not necessary)
+5. Enable direnv (if applicable)
+>>>>>>> b8625364f2f8c96ef6f6e6fc0a9b251aa21c751a
