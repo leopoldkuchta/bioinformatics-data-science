@@ -12,4 +12,3 @@ What I consider to be the best currently available software stack for bioinforma
 3. Positron:
     - in settings enable R pixi environment detection
     - in settings disable `use bundled ipykernel"
-4. Enable direnv (if applicable)

@@ -11,7 +11,7 @@ r-base = ">=4.5.3,<4.6"
 r-biocmanager = ">=1.30.27,<2"
 r-reticulate = ">=1.45.0,<2"
 
-[tasks]
+[tasks] # only required for windows based machines - bioconda packages are limited
 setup-r-packages = """
 Rscript -e \"
 dir.create('./.pixi/R_libs', showWarnings=FALSE);

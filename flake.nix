@@ -17,7 +17,8 @@
 
           targetPkgs = _: [ 
             pkgs.pixi 
-            pkgs.positron-bin
+            pkgs.which # used by R and not available in devshell!
+            pkgs.positron-bin # also works with system editor
           ];
         };
       in
